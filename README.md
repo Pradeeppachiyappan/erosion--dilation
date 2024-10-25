@@ -21,15 +21,20 @@ Erode the image
 
 ### Step5:
 Dilate the Image
-## Program:
 
-``` 
-# Import the necessary packages
+## Program:
+```
+Developed By : Pradeepraj P
+Reg No : 212222240073
+```
+### Import the necessary packages
+```
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-
-# Create the Text using cv2.putText
+```
+### Create the Text using cv2.putText
+```
 image = np.zeros((300, 600, 3), dtype="uint8")
 text = "Pradeep D Raj"
 font = cv2.FONT_HERSHEY_SIMPLEX
@@ -38,24 +43,26 @@ image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 plt.imshow(image_rgb)
 plt.title("Original Image")
 plt.axis("off")
-
-# Create the structuring element
+```
+### Create the structuring element
+```
 kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
-
-# Erode the image
+```
+### Erode the image
+```
 eroded_image = cv2.erode(image, kernel, iterations=1)
 eroded_image_rgb = cv2.cvtColor(eroded_image, cv2.COLOR_BGR2RGB)
 plt.imshow(eroded_image_rgb)
 plt.title("Eroded Image")
 plt.axis("off")
-
-# Dilate the image
+```
+### Dilate the image
+```
 dilated_image = cv2.dilate(image, kernel, iterations=1)
 dilated_image_rgb = cv2.cvtColor(dilated_image, cv2.COLOR_BGR2RGB)
 plt.imshow(dilated_image_rgb)
 plt.title("Dilated Image")
 plt.axis("off")
-
 ```
 ## Output:
 
